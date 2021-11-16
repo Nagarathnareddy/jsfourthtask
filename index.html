@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+    <strong><h1 id="heading">SSC EXAMINATION RESULTS</h1></strong>  
+    
+
+<fieldset id="fset1">
+
+<br>
+        <label>Telugu Marks</label>
+        <br>
+        <input id="telMarks" type="text">
+        <br>
+        <label>English Marks</label>
+        <br>
+        <input id="engMarks" type="text">
+        <br>
+        <label>Hindi Marks</label>
+        <br>
+        <input id="hinMarks" type="text">
+        <br>
+        <label>Maths Marks</label>
+        <br>
+        <input id="matMarks" type="text">
+        <br>
+        <label>Science Marks</label>
+        <br>
+        <input id="sciMarks" type="text">
+        <br>
+        <label>Social Marks</label>
+        <br>
+        <input id="socMarks"type="text">
+        <br>
+        <br>
+
+        <button id="button1" onclick="totalMarks(document.getElementById('telMarks').value,document.getElementById('engMarks').value,document.getElementById('hinMarks').value,document.getElementById('matMarks').value,document.getElementById('sciMarks').value,document.getElementById('socMarks').value,1)">Calculate</button>
+        
+
+        <button id="clear1">Clear</button>
+        <br>
+        <br>
+      
+        <label>TotalMarks</label><br><input type="text" id="totalMarks1">
+        <br>
+        <label>Average</label><br><input type="text" id="averageMarks1">
+        <br>
+      
+        <label>Grade</label><br><input type="text" id="grade1">
+        <h1 id="result1">Result</h1>
+
+     </fieldset>
+         <!--student2-->
+
+     <fieldset id="fset2">
+        
+       
+
+        <label>Telugu Marks</label>
+        <br>
+        <input id="telMarks2" type="text">
+        <br>
+        <label>English Marks</label>
+        <br>
+        <input id="engMarks2" type="text">
+        <br>
+        <label>Hindi Marks</label>
+        <br>
+        <input id="hinMarks2" type="text">
+        <br>
+        <label>Maths Marks</label>
+        <br>
+        <input id="matMarks2" type="text">
+        <br>
+        <label>Science Marks</label>
+        <br>
+        <input id="sciMarks2" type="text">
+        <br>
+        <label>Social Marks</label>
+        <br>
+        <input  id="socMarks2"type="text">
+        <br>
+        <br>
+
+        <button id="button1" onclick="totalMarks(document.getElementById('telMarks2').value,document.getElementById('engMarks2').value,document.getElementById('hinMarks2').value,document.getElementById('matMarks2').value,document.getElementById('sciMarks2').value,document.getElementById('socMarks2').value,2)">Calculate</button>
+
+        <button id="clear2">Clear</button>
+        <br>
+        <br>
+      
+        <label>TotalMarks</label><br><input type="text" id="totalMarks2">
+        <br>
+        <label>Average</label><br><input type="text" id="averageMarks2">
+        <br>
+        <label>Grade</label><br><input type="text" id="grade2">
+        <h1 id="result2">Result</h1>
+       
+    </fieldset>
+
+           <!--student3-->
+
+<fieldset id="fset3">
+
+    <br>
+            <label>Telugu Marks</label>
+            <br>
+            <input id="telMarks3" type="text">
+            <br>
+            <label>English Marks</label>
+            <br>
+            <input id="engMarks3" type="text">
+            <br>
+            <label>Hindi Marks</label>
+            <br>
+            <input id="hinMarks3" type="text">
+            <br>
+            <label>Maths Marks</label>
+            <br>
+            <input id="matMarks3" type="text">
+            <br>
+            <label>Science Marks</label>
+            <br>
+            <input id="sciMarks3" type="text">
+            <br>
+            <label>Social Marks</label>
+            <br>
+            <input id="socMarks3"type="text">
+            <br>
+            <br>
+    
+            <button id="button1" onclick="totalMarks(document.getElementById('telMarks3').value,document.getElementById('engMarks3').value,document.getElementById('hinMarks3').value,document.getElementById('matMarks3').value,document.getElementById('sciMarks3').value,document.getElementById('socMarks3').value,3)">Calculate</button>
+            
+    
+            <button id="clear1">Clear</button>
+            <br>
+            <br>
+          
+            <label>TotalMarks</label><br><input type="text" id="totalMarks3">
+            <br>
+            <label>Average</label><br><input type="text" id="averageMarks3">
+            <br>
+          
+            <label>Grade</label><br><input type="text" id="grade3">
+            <h1 id="result3">Result</h1>
+
+     <script>
+            
+          
+
+
+          
+        
+
+          function totalMarks(telMarks,engMarks,hinMarks,matMarks,sciMarks,socMarks,formid){
+          
+
+        var totalMarks = parseInt(telMarks) + parseInt (engMarks) + parseInt (hinMarks) + parseInt(matMarks)+ parseInt(sciMarks) +parseInt (socMarks);
+       /* alert(totalMarks);*/
+       
+         /*calculating Average*/
+         alert("totalMarks"+formid)
+         document.getElementById("totalMarks"+formid).value=totalMarks;
+
+
+         
+         avgMarks = totalMarks*100/600;
+         document.getElementById("averageMarks"+formid).value = avgMarks;
+         //grade(avgMarks,formid);
+         grade(avgMarks,formid);
+
+
+          
+          }
+
+     // *Calculating Grade*/
+
+
+
+     function grade(x,y)
+       {
+
+       
+       if(x>=80)
+       {
+                document.getElementById("grade"+y).value="A";
+               
+       }
+        else if(x>=60) 
+       {
+        document.getElementById("grade"+y).value="B";
+               
+       }  
+        else if (x>=40) 
+       {
+        document.getElementById("grade"+y).value="C";
+               
+       }else    
+         document.getElementById("grade"+y).value="Failed";
+       }
+
+     </script>
+
+       
+</body>
+        
+
+</html>
